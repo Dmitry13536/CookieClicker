@@ -18,7 +18,7 @@ function About(){
             </div>
         
                 <p className="about--text">My github</p>
-                <a href="">Click</a>
+                <a href="https://github.com/Dmitry13536">Click</a>
             
             <button className="popup--close" onClick={handleClose}>Close</button>
         </div>

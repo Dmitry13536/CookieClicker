@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import CookieClick from './Components/CookieClick';
 import CookieCount from './Components/CookieCount';
@@ -17,15 +16,12 @@ function App() {
   const intervalRef = useRef(null);
   const {autoCookie} = useCookie((state) => state)
 
-  useEffect(
-    ()=>{
-      intervalRef.current = setInterval(autoCookie(), 1000);
-
-      return () => {
-        clearInterval(intervalRef.current)
-      }
-    },[]
-  )
+  useEffect(() => {
+    intervalRef.current = setInterval(autoCookie, 1000);
+    return () => {
+      clearInterval(intervalRef.current);
+    };
+  }, [autoCookie]); 
 
 
   return (
@@ -40,8 +36,6 @@ function App() {
       <Route path='/' element={<Home />} />
       <Route path='/about' element={<About />}/>
       <Route path='/store' element={<Store />}/>
-        {/* <Route path="/store/auto" element={<UpgradeMenu/>} />
-        <Route path="/store/click" element={<UpgradeMenuClick />} /> */}
       <Route path='/skins' element={<Skins />}/>
       <Route path='/options' element={<Options/>}/>
     </Routes>

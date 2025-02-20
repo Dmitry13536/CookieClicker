@@ -20,7 +20,7 @@ function CookieCount(){
     }
 
     return(
-      <div><p className="clicker--count">{func(CookieCount)}<FontAwesomeIcon className="cookie" icon={faCookieBite} /></p></div>
+      <div><p className="clicker--count">{func(CookieCount.toFixed(2))}<FontAwesomeIcon className="cookie" icon={faCookieBite} /></p></div>
     )
 }
 

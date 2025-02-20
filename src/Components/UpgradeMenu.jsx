@@ -11,11 +11,11 @@ function UpgradeMenu(){
 
     return(
         <div className="upgrademenu">
-            <UpgradeCard img={img1} title={'Cookie factory'} startAdd={1} startCost={10} />
-            <UpgradeCard img={img2} title={'Sugar Rush Automation'} startAdd={5} startCost={100} />
-            <UpgradeCard img={img3} title={'Eternal Cookie Bake'} startAdd={30} startCost={1000} />
-            <UpgradeCard img={img4} title={'The Cookie Alchemist'} startAdd={100} startCost={10000} />
-            <UpgradeCard img={img5} title={'Sugar Bird'} startAdd={500} startCost={50000} />
+            <UpgradeCard img={img1} Auto={true} title={'Cookie factory'} startAdd={1} startCost={10} />
+            <UpgradeCard img={img2} Auto={true} title={'Sugar Rush Automation'} startAdd={3} startCost={100} />
+            <UpgradeCard img={img3} Auto={true} title={'Eternal Cookie Bake'} startAdd={10} startCost={1000} />
+            <UpgradeCard img={img4} Auto={true} title={'The Cookie Alchemist'} startAdd={50} startCost={10000} />
+            <UpgradeCard img={img5} Auto={true} title={'Sugar Bird'} startAdd={300} startCost={50000} />
         </div>
     )
 }
