@@ -1,0 +1,222 @@
+@font-face{
+  src: url(./Bagel_Fat_One/BagelFatOne-Regular.ttf);
+  font-family: 'Bagel' ;
+  font-weight: normal;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+html{
+  font-size: 10px;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  color: white;
+  font-family: 'Bagel';
+  overflow-y: hidden;
+}
+
+body:before{
+  content: '';
+  position: fixed;
+  left: 0;
+  top: 0;
+  background:  linear-gradient(#954A25 3%, #F98B54, #954A25 97%) no-repeat;
+  height: 120vh;
+  width: 100vw; 
+  /* transform: rotate(-45deg); */
+  /* transform-origin: bottom; */
+  z-index: -1;
+}
+
+.App {
+  text-align: center;
+  display: grid;
+  grid-template-rows: 1fr 4fr 0.5fr 2fr;
+}
+
+.cookie{
+  color: #f0cd87;
+}
+
+.title{
+  font-size: 5.2rem;
+  margin-top: 3rem;
+}
+
+
+.clicker{
+  align-self: center;
+  padding: 0 5rem;
+}
+
+.clicker--img{
+  width: 100%;
+  aspect-ratio: 1/1;
+  animation-name: spin;
+  animation-duration: 100s;
+  animation-iteration-count: infinite;
+}
+
+.clicker--img:active{
+  width: 97%;
+}
+
+.clicker--count{
+  font-size: 4rem;
+  margin-top: 2rem;
+  max-width: 100%;
+  overflow-y: auto;
+}
+
+.menu{
+  align-self: center;
+  display: flex;
+  justify-content: center;
+}
+
+.menubutton{
+  background-color: #D4944D;
+  border-radius: 10px;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  padding: 2rem 0;
+  margin: 0 2%;
+  height: 9rem;
+  width: 25%;
+  max-width: 7rem;
+  border: none;
+}
+
+.menubutton--icon{
+  color: white;
+  font-size: 4rem;
+  margin: 0 auto;
+}
+
+.popup{
+  background-color: #D4944D;
+  z-index: 11;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -59%);
+  border-radius: 20px;
+  height: fit-content;
+  min-height: 65%;
+  padding-bottom: 1rem;
+  width: 90vw;
+}
+
+.popup.store{
+  display: grid;
+  grid-template-rows: 0.4fr 0.3fr 4fr 0.5fr;
+}
+
+.popup.about{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.popup.about a{
+  font-size: 30px;
+  background-color: #954A25;
+  border-radius: 20px;
+  color: white;
+  padding: 4%;
+}
+
+.about--text{
+  font-size: 30px;
+  text-align: center;
+}
+
+.popup--title{
+  margin: 0 auto;
+  color: #1C1B1F;
+  font-size: 5rem;
+  padding: 0.2em 0;
+}
+
+.store__choose{
+  display: flex;
+  justify-content: space-around;
+}
+
+.store__choose button{
+  background-color: #AF7B43;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-family: 'Bagel';
+  padding: 2% 4%;
+  font-size: 2rem;
+}
+
+.store__choose button.dark{
+  background-color: #954A25;
+}
+
+.popup--close{
+  justify-self: center;
+  color: white;
+  font-size: 3rem;
+  font-family: 'Bagel' ;
+  border: none;
+  background: #49331C;
+  width: 30%;
+  border-radius: 20px;
+  padding: 1px;
+}
+
+.upgrademenu{
+  padding: 3% ;
+}
+
+.card{
+  padding: 1%;
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-column-gap: 1% ;
+  width: 100%;
+  justify-content: center;
+  margin: 2% 0;
+  background: #AF7B43;
+  border-radius: 10px;
+}
+
+.card--title{
+  font-size: 18px;
+}
+
+.card--img{
+  width: 100%;
+  border-radius: 10px;
+}
+
+.card__numbers{
+  display: flex;
+  justify-content: space-around;
+}
+
+.card--button{
+  background: none;
+  color: white;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
+  font-size: 3rem;
+  border: none;
+}
