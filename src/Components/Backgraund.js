@@ -29,7 +29,7 @@ function BackgroundMusic({scr}){
                     MusicRef.current = null;
                 }
             };
-        },[Music]);
+        },[Music, scr]);
         
     return null;
 }
