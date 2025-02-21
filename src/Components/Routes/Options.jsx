@@ -2,20 +2,20 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useSound } from "../../App/Store";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMusic, faVolumeHigh } from "@fortawesome/free-solid-svg-icons";
+import { faMusic} from "@fortawesome/free-solid-svg-icons";
 
 
 function Options(){
     const navigate = useNavigate();
-    const {Sound, Music, setMusic, setSound} = useSound((state)=>state);
+    const { Music, setMusic} = useSound((state)=>state);
 
     const handleClose = () =>{
         navigate('/')
     }
 
-    const handleChangeSound = (event) =>{
-        setSound(event.target.value)
-    }
+    // const handleChangeSound = (event) =>{
+    //     setSound(event.target.value)
+    // }
 
     const handleChangeMusic = (event) =>{
         setMusic(event.target.value)
