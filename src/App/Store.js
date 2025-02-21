@@ -15,7 +15,7 @@ export const useCookie = create(
             incrementAuto: (amount) => {set((state)=>({AutoAmount: state.AutoAmount + amount}))},
         })
     ), {
-        name: 'cookie-store', // Название для хранения в localStorage
+        name: 'cookie-store',
       }
 )
 
@@ -24,8 +24,10 @@ export const useCookie = create(
 export const useSound = create(
     persist(
         (set)=>({
-            Sound: 1,
-            Music: 1
+            Sound: 0,
+            Music: 0,
+            setSound: (amount) => (set((state)=>({Sound: amount}))),
+            setMusic: (amount) => (set((state)=>({Music: amount})))
         })
     )
 )

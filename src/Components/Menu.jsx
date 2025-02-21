@@ -3,9 +3,11 @@ import MenuButton from "./MenuButton";
 import { faStore } from "@fortawesome/free-solid-svg-icons/faStore";
 import { faCircleQuestion, faGear, faShirt } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
+import useLargeScreen from "../IsDesktop";
 
 function Menu(){
     const navigate = useNavigate();
+    const screen = useLargeScreen();
 
     const NavigateAbout = ()=>{
         navigate('/about')
@@ -25,7 +27,7 @@ function Menu(){
 
     return(
         <div className="menu">
-            <MenuButton onClick={NavigateStore} icon={faStore}/>
+            {!screen && <MenuButton onClick={NavigateStore} icon={faStore}/>}
             <MenuButton onClick={NavigateSkins} icon={faShirt}/>
             <MenuButton onClick={NavigateOptions} icon={faGear}/>
             <MenuButton onClick={NavigateAbout} icon={faCircleQuestion}/>

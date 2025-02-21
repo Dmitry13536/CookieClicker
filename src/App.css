@@ -27,20 +27,22 @@ body{
   color: white;
   font-family: 'Bagel';
   overflow-y: hidden;
+  background:  linear-gradient(#954A25 3%, #F98B54, #954A25 97%) no-repeat;
+  height: 120vh;
+  width: 100vw; 
+  max-width: 100vw;
 }
 
-body:before{
+/* body:before{
   content: '';
   position: fixed;
   left: 0;
   top: 0;
-  background:  linear-gradient(#954A25 3%, #F98B54, #954A25 97%) no-repeat;
   height: 120vh;
   width: 100vw; 
   /* transform: rotate(-45deg); */
   /* transform-origin: bottom; */
-  z-index: -1;
-}
+  /* z-index: -1; */
 
 .App {
   text-align: center;
@@ -107,6 +109,9 @@ body:before{
 }
 
 .popup{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
   background-color: #D4944D;
   z-index: 11;
   position: fixed;
@@ -126,9 +131,6 @@ body:before{
 }
 
 .popup.about{
-  display: flex;
-  align-items: center;
-  flex-direction: column;
   justify-content: space-between;
 }
 
@@ -219,4 +221,90 @@ body:before{
   text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
   font-size: 3rem;
   border: none;
+}
+
+.popup.options{
+  display: grid;
+  grid-template-rows: 1fr 4fr 1fr;
+}
+
+.options--input{
+  font-size: 30px;
+  margin: 5rem;
+  
+}
+
+.options--input input{
+  margin-left: 2rem; 
+  -webkit-appearance: none;
+  background: left linear-gradient(#AF7B43, #49331C) ;
+  padding: 1rem;
+  border-radius: 20px;
+  
+}
+
+/* .options--input input::-webkit-slider-thumb{
+  width: 203px;
+} */
+
+@media (min-width: 520px){
+  .clicker--img{
+    width: 70%;
+  }
+
+  .popup{
+    width: 70vw;
+  }
+}
+
+@media (min-width: 1020px){
+  html{
+    font-size: 18px;
+  }
+
+  .App{
+    grid-template-rows: auto;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .title{
+    font-size: 4rem;
+    margin: 0 0 4rem 0;
+  }
+
+  .popup{
+    position: relative;
+    transform: none;
+    width: 33%;
+  }
+
+  .clicker--img:active{
+    width: 67%;
+  }
+
+  .column1{
+    margin-top: 10%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .column1--title{
+    font-size: 3rem;
+  }
+
+  .column2{
+    display: grid;
+    
+  }
+
+  .menubutton{
+    padding: 0;
+    width: 33%;
+    height: 3rem;
+  }
+
+  .menubutton--icon{
+    font-size: 2rem;
+    width: 50%;
+  }
 }
