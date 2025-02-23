@@ -1,19 +1,24 @@
 import { useEffect, useRef } from "react";
 import { useSound } from "../App/Store";
 
-function BackgroundMusic({scr}){
+function BackgroundMusic({src}){
     const MusicRef = useRef(null);
     const {Music} = useSound(state=>state)
 
-    useEffect(
-        ()=>{
-            MusicRef.current = new Audio(scr);
+    useEffect(()=>{
+
+            MusicRef.current = new Audio(src);
             MusicRef.current.loop = true;
             MusicRef.current.volume = Music/100;
 
             const handleFirstInteraction = () => {
-                MusicRef.current.play();
-
+                MusicRef.current.play()
+                .then(()=>{
+                    console.log('работает')
+                })              
+                .catch((error)=>{
+                    console.log('не работает ', error)
+                })
                 document.removeEventListener('click', handleFirstInteraction);
             };
 
@@ -29,9 +34,9 @@ function BackgroundMusic({scr}){
                     MusicRef.current = null;
                 }
             };
-        },[Music, scr]);
+        },[Music, src]);
         
     return null;
 }
 
-export default BackgroundMusic ;
+export default BackgroundMusic;

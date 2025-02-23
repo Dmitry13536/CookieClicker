@@ -25,7 +25,7 @@ export const useSound = create(
     persist(
         (set)=>({
             Sound: 0,
-            Music: 0,
+            Music: 1,
             setSound: (amount) => (set((state)=>({Sound: amount}))),
             setMusic: (amount) => (set((state)=>({Music: amount})))
         })

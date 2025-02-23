@@ -37,6 +37,7 @@ function App() {
           <CookieClick />
           <CookieCount />
           <Menu />
+          <BackgroundMusic src={music} />
         </div>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -45,7 +46,6 @@ function App() {
           <Route path="/skins" element={<Skins />} />
           <Route path="/options" element={<Options />} />
         </Routes>
-        <BackgroundMusic src={music} />
       </BrowserRouter>
     );
   } else {
