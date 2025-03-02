@@ -1,13 +1,13 @@
 import { useEffect, useRef } from "react";
-import { useSound } from "../App/Store";
+import { useImg, useSound } from "../App/Store";
 
-function BackgroundMusic({src}){
+function BackgroundMusic({src1, src2}){
     const MusicRef = useRef(null);
     const {Music} = useSound(state=>state)
+    const {Img} = useImg(state => state);
 
     useEffect(()=>{
-
-            MusicRef.current = new Audio(src);
+            MusicRef.current = new Audio(Img===5?src2:src1);
             MusicRef.current.loop = true;
             MusicRef.current.volume = Music/100;
 
@@ -34,7 +34,7 @@ function BackgroundMusic({src}){
                     MusicRef.current = null;
                 }
             };
-        },[Music, src]);
+        },[Music, src1, src2, Img]);
         
     return null;
 }

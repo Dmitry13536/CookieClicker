@@ -243,6 +243,32 @@ body{
   
 }
 
+.skins{
+  display: grid;
+}
+
+.skin__choose{
+  display: flex;
+  align-items: center;
+}
+
+.skin__choose--arrow{
+  margin: 0 1rem;
+  width: 4rem;
+  height: fit-content;
+  padding: 2rem 0;
+  font-size: 20px;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  background-color: #49331C;
+}
+
+.skin__choose--img img{
+  width:26rem;
+}
+
+
 /* .options--input input::-webkit-slider-thumb{
   width: 203px;
 } */
@@ -275,7 +301,8 @@ body{
   .popup{
     position: relative;
     width: 33%;
-    transform: translate(-50%, -100%);
+    transform: translate(-50%, -130%);
+    min-height: 20rem ;
   }
 
   .popup.options{

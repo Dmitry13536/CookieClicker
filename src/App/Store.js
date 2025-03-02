@@ -31,3 +31,13 @@ export const useSound = create(
         })
     )
 )
+
+export const useImg = create(
+    persist(
+        (set)=>({
+            Img:1,
+            plusImg: ()=> (set((state) => ({Img: state.Img ===5 ? 1 : state.Img+1}))),
+            minusImg: ()=> (set((state)=> ({Img: state.Img ===1 ? 5 : state.Img-1}))),
+        })
+    ), {name : 'img-storage'}
+)

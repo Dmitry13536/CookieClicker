@@ -9,9 +9,10 @@ import Skins from './Components/Routes/Skins';
 import Store from './Components/Routes/Store';
 import BackgroundMusic from './Components/Backgraund';
 import { useCookie } from './App/Store';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { HashRouter, Route, Routes } from 'react-router-dom';
 import React, { useEffect, useRef } from 'react';
 import music from './imgs/music1.mp3';
+import music1 from './imgs/music2.mp3';
 import useLargeScreen from './IsDesktop';
 import UpgradeMenuClick from './Components/UpgradeMenuClick';
 import UpgradeMenu from './Components/UpgradeMenu';
@@ -31,13 +32,13 @@ function App() {
 
   if (!screen) {
     return (
-      <BrowserRouter>
+      <HashRouter>
         <div className="App">
           <p className="title">Cookie clicker</p>
           <CookieClick />
           <CookieCount />
           <Menu />
-          <BackgroundMusic src={music} />
+          <BackgroundMusic src1={music} src2={music1} />
         </div>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -46,11 +47,11 @@ function App() {
           <Route path="/skins" element={<Skins />} />
           <Route path="/options" element={<Options />} />
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     );
   } else {
     return (
-      <BrowserRouter>
+      <HashRouter>
         <div className="App">
           <div className="column1">
             <p className='column1--title'>Auto</p>
@@ -74,8 +75,8 @@ function App() {
           <Route path="/skins" element={<Skins />} />
           <Route path="/options" element={<Options />} />
         </Routes>
-        <BackgroundMusic src={music} />
-      </BrowserRouter>
+        <BackgroundMusic src1={music} src2={music1} />
+      </HashRouter>
     );
   }
 }
